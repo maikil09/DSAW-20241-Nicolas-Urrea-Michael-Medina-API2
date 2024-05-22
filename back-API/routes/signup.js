@@ -3,7 +3,7 @@ const router = require("express").Router();
 router.post("/",(req,res)=>{
     const{name, email, username, password} = req.body;
 
-    if(!!name || !!!email || !!!username || !!!password ){
+    if(!!!name || !!!email || !!!username || !!!password ){
         return res.status(400).json(jsonResponse(400,{
             error: "Campos Requeridos",
         })
